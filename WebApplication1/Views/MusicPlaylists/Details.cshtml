@@ -1,0 +1,66 @@
+﻿@model WebAppMusic.Models.MusicPlaylist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MusicPlaylist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountLike)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountLike)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountDislike)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountDislike)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountListen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountListen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkOtherSite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkOtherSite)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
