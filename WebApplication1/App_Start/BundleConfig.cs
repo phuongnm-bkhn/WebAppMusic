@@ -26,6 +26,16 @@ namespace WebAppMusic
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // Use for getting start
+            //bundles.Add(new StyleBundle("~/bundles/GettingStart-css").IncludeDirectory(
+            //         "~/Assets/css", "*.css", true
+            //         ));
+            //bundles.Add(new ScriptBundle("~/bundles/GettingStart-js")
+            //    .IncludeDirectory("~/Assets/js", "retina-{version}.js", true)
+            //    .IncludeDirectory("~/Assets/js", "placeholder.js", true)
+            //    .IncludeDirectory("~/Assets/js", "scripts.js", true)
+            //    );
         }
     }
 }

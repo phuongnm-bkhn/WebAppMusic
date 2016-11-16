@@ -9,6 +9,7 @@ namespace WebAppMusic.Models
         public int Id { get; set; }
 
         // Ten list nhac
+        //[StringLength(128, MinimumLength = 3)]
         public string Name { get; set; }
 
         // Ngay khoi tao list nhac 
@@ -26,6 +27,6 @@ namespace WebAppMusic.Models
         // Danh sach nhac cua playlist
         public virtual ICollection<MusicFile> MusicFiles { get; set; }
         public virtual ICollection<ApplicationUser> Uers { get; set; }
-
     }
+
 }

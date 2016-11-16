@@ -14,6 +14,11 @@ namespace WebAppMusic.Controllers
             return View();
         }
 
+        public ActionResult test()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Cung cấp playlist nhạc mọi lúc mọi nơi.";

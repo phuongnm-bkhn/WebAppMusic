@@ -42,5 +42,6 @@ namespace WebAppMusic.Models
         public System.Data.Entity.DbSet<WebAppMusic.Models.MusicFile> MusicFiles { get; set; }
 
         public System.Data.Entity.DbSet<WebAppMusic.Models.MusicPlaylist> MusicPlaylists { get; set; }
+
     }
 }

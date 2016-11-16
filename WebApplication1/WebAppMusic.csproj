@@ -261,9 +261,13 @@
     <Content Include="Views\MusicPlaylists\Details.cshtml" />
     <Content Include="Views\MusicPlaylists\Edit.cshtml" />
     <Content Include="Views\MusicPlaylists\Index.cshtml" />
+    <Content Include="Views\Shared\_GettingStarted.cshtml" />
+    <Content Include="Views\Home\test.cshtml" />
+    <Content Include="Views\MusicPlaylists\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
