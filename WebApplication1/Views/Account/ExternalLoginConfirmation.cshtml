@@ -13,12 +13,11 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <p class="text-info">
-        You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
-        Please enter a user name for this site below and click the Register button to finish
-        logging in.
+        Bạn đã đăng nhập thành công với <strong>@ViewBag.LoginProvider</strong>.
+        Hãy nhập tên đăng nhập cho website và nhấn nút Đăng kí để kết thúc đăng nhập.
     </p>
     <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Email,"Email", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
@@ -26,7 +25,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.BirthDate,"Ngày sinh", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
