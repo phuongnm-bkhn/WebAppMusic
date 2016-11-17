@@ -175,13 +175,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610300514400_InitialCreate.cs" />
-    <Compile Include="Migrations\201610300514400_InitialCreate.Designer.cs">
-      <DependentUpon>201610300514400_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201611170625135_InitDataBase.cs" />
+    <Compile Include="Migrations\201611170625135_InitDataBase.Designer.cs">
+      <DependentUpon>201611170625135_InitDataBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610300558211_Notknow.cs" />
-    <Compile Include="Migrations\201610300558211_Notknow.Designer.cs">
-      <DependentUpon>201610300558211_Notknow.cs</DependentUpon>
+    <Compile Include="Migrations\201611170647448_SuaPlaylistOtherLink.cs" />
+    <Compile Include="Migrations\201611170647448_SuaPlaylistOtherLink.Designer.cs">
+      <DependentUpon>201611170647448_SuaPlaylistOtherLink.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -201,6 +201,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,11 +279,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610300514400_InitialCreate.resx">
-      <DependentUpon>201610300514400_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611170625135_InitDataBase.resx">
+      <DependentUpon>201611170625135_InitDataBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610300558211_Notknow.resx">
-      <DependentUpon>201610300558211_Notknow.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611170647448_SuaPlaylistOtherLink.resx">
+      <DependentUpon>201611170647448_SuaPlaylistOtherLink.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,6 +6,10 @@ namespace WebAppMusic.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name = "Tên tài khoản (*)")]
+        public string UserName { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -51,9 +55,8 @@ namespace WebAppMusic.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Tên tài khoản")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -66,6 +69,11 @@ namespace WebAppMusic.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(100, ErrorMessage = "{0} phải có ít nhất {2} kí tự.", MinimumLength = 4)]
+        [Display(Name = "Tên tài khoản")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

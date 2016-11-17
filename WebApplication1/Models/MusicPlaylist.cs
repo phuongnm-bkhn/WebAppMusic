@@ -9,7 +9,7 @@ namespace WebAppMusic.Models
         public int Id { get; set; }
 
         // Ten list nhac
-        //[StringLength(128, MinimumLength = 3)]
+        [StringLength(128, MinimumLength = 3)]
         public string Name { get; set; }
 
         // Ngay khoi tao list nhac 
@@ -21,12 +21,12 @@ namespace WebAppMusic.Models
         public int CountListen { get; set; }
 
         // List nhac nay tu trang khac vd: mp3.zing.vn
-        [StringLength(2000, MinimumLength = 3)]
+        [StringLength(2000)]
+        [DataType(DataType.Url)]
         public string LinkOtherSite { get; set; }
 
         // Danh sach nhac cua playlist
         public virtual ICollection<MusicFile> MusicFiles { get; set; }
-        public virtual ICollection<ApplicationUser> Uers { get; set; }
     }
 
 }

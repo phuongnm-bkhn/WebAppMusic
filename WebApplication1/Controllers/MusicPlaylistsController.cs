@@ -22,7 +22,8 @@ namespace WebAppMusic.Controllers
         // GET: MusicPlaylists
         public ActionResult List()
         {
-            Dictionary<string, List<MusicPlaylist>> dataPlaylist = new Dictionary<string, List<MusicPlaylist>>();
+            Dictionary<string, List<MusicPlaylist>> dataPlaylist
+                = new Dictionary<string, List<MusicPlaylist>>();
             List<MusicPlaylist> lstPlaylist = new List<MusicPlaylist>();
             if (User.Identity.IsAuthenticated)
             {
@@ -52,7 +53,6 @@ namespace WebAppMusic.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.countUser = musicPlaylist.Uers.Count;
             return View(musicPlaylist);
         }
 
@@ -73,6 +73,7 @@ namespace WebAppMusic.Controllers
         }
 
         // GET: MusicPlaylists/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -83,6 +84,7 @@ namespace WebAppMusic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,Name,LinkOtherSite")] MusicPlaylist musicPlaylist,
             [Bind(Include = "linkMusic")] string[] linkMusic)
         {
@@ -100,8 +102,21 @@ namespace WebAppMusic.Controllers
                     // Luu lai doi tuong
                     // :Save obj to db
                     MusicPlaylist newPlaylist = db.MusicPlaylists.Add(musicPlaylist);
-                    db.SaveChanges();   // Luu Playlist 
 
+                    //if (true)
+                    //{
+                        
+                    //    // Lưu liên kết playlist với người dùng 
+                    //    db.Users.Where(user => user.UserName == User.Identity.Name)
+                    //    .First()
+                    //    .Playlists
+                    //    .Add(newPlaylist);
+
+                    //    db.SaveChanges();   // Luu Playlist 
+                    //    return RedirectToAction("Index");
+                    //}
+
+                    db.SaveChanges();   // Luu Playlist 
                     List<MusicFile> listMusic= new List<MusicFile>();
                     foreach (var link in linkMusic)
                     {
@@ -124,7 +139,15 @@ namespace WebAppMusic.Controllers
                         listMusic.Add(newFile);
                     }
 
-                    newPlaylist.MusicFiles = listMusic.ToArray();   // Lưu liên kết nhạc vs playlist
+                    // Lưu liên kết nhạc vs playlist
+                    newPlaylist.MusicFiles = listMusic.ToArray();   
+                    db.SaveChanges();
+
+                    // Lưu liên kết playlist với người dùng 
+                    db.Users.Where(user => user.UserName == User.Identity.Name)
+                    .First()
+                    .Playlists
+                    .Add(newPlaylist);
                     db.SaveChanges();
 
                     return RedirectToAction("Index");
